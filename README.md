@@ -4,6 +4,12 @@
 
 [Autograd](/2.%20Autograd/Note.md)
 
+[Backpropagation](./3.%20Backpropagation/Note.md)
+
+[Gradients Descent](./4.%20Gradients%20Descent/Note.md)
+
+[Training pipeline](./5.%20Training%20pipeline/Note.md)
+
 ## Reference
 
 [PyTorch Tutorials](https://youtube.com/playlist?list=PLqnslRFeH2UrcDBWF5mfPGpqQDSta6VK4)
