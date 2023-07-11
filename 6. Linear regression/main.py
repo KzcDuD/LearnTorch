@@ -4,6 +4,7 @@
 #   - forward pass: compute prediction
 #   - backward pass:gradients
 #   - update weights
+
 import torch 
 import torch.nn as nn
 import numpy as np

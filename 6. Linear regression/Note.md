@@ -8,3 +8,12 @@ Scikit-learn是用於Python程式語言的自由軟體機器學習庫。它的�
 + `datasets.make_regression`
 
 ## `matplotlib.pyplot`
+
++ `plt.plot(x_numpy,y_numpy,'ro')`
+  + 'ro' :red and point
+
+## referance
+
+[-Scikit-learn介紹](https://ithelp.ithome.com.tw/articles/10204845)
+[建立線性迴歸資料與預測！](https://ithelp.ithome.com.tw/articles/10197248)
+[資料視覺化 matplotlib](https://ithelp.ithome.com.tw/articles/10307457)
