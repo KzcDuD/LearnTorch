@@ -18,7 +18,9 @@
 
 [全民瘋AI](https://ithelp.ithome.com.tw/users/20107247/ironman/3719)
 
-[全民瘋AI系列2.0](https://ithelp.ithome.com.tw/users/20107247/ironman/4723)
+[全民瘋AI系列 2.0](https://ithelp.ithome.com.tw/users/20107247/ironman/4723)
+
+[全民瘋AI系列 Git](https://github.com/andy6804tw/2020-12th-ironman)
 
 [Deep Learning 從零開始到放棄的 30 天 PyTorch 數字辨識模型](https://ithelp.ithome.com.tw/users/20132118/ironman/4690)
 
