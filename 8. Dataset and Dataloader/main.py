@@ -30,7 +30,7 @@ class WineDataset(Dataset):
     
     def __init__(self):
         # data loading
-        xy = np.loadtxt('./wine.csv',delimiter=",",dtype=np.float32 ,skiprows=1)
+        xy = np.loadtxt('../Data/wine/wine.csv',delimiter=",",dtype=np.float32 ,skiprows=1)
         self.x= torch.from_numpy(xy[:,1:])
         self.y =torch.from_numpy(xy[:,[0]]) # n_samples , 1
         self.n_samples =xy.shape[0]
