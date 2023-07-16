@@ -57,7 +57,7 @@ class NeuralNet(nn.Module):
 
 model =NeuralNet(input_size , hidden_size , num_classes)
 # print(next(model.parameters()).device) #cpu
-model =model.cuda()
+model.to(device)
 
 # loss ans optimizer
 criterion =nn.CrossEntropyLoss()
