@@ -10,6 +10,26 @@
 
 [Training pipeline](./5.%20Training%20pipeline/Note.md)
 
+[Linear Regression](./6.%20Linear%20regression/Note.md)
+
+[Logistic Regression](./7.%20Logistic%20Regression/Note.md)
+
+[Dataset and Dataloader](./8.%20Dataset%20and%20Dataloader/Note.md)
+
+[Dataset Transforms](./9.%20Dataset%20transforms/Note.)
+
+[Softmax and CrossEntropy](./10.%20Softmax%20and%20Cross%20Entropy/)
+
+[Active Function](./11.%20Active%20Function/Note.md)
+
+[Feed-Forward Neural Network](./12.%20Feed-Forward%20Network/Note.md)
+
+[Conv NN](./13.%20Convolutional%20Neural%20Network%20(CNN)/Note.md)
+
+## Reqirement
+
+    `pip install -r requirements.txt`
+
 ## Reference
 
 [PyTorch Tutorials](https://youtube.com/playlist?list=PLqnslRFeH2UrcDBWF5mfPGpqQDSta6VK4)
