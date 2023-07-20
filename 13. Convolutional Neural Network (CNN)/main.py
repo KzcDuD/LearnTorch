@@ -10,7 +10,7 @@ import numpy as np
 device  = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Hyper-parameters
-num_epochs =4
+num_epochs =20 # increase training loop ,will get better Sol.
 batch_size = 4
 learning_rate =0.001
 
@@ -26,19 +26,31 @@ train_dataset = torchvision.datasets.CIFAR10(root='../data',train=False,
 test_dataset = torchvision.datasets.CIFAR10(root='../data',train=False,
                                              download=True,transform=transform)
 
-train_loader = torchvision.datasets.Dataloader(train_dataset , batch_size=batch_size , shuffle=True)
+train_loader = torch.utils.data.DataLoader(train_dataset , batch_size=batch_size , shuffle=True)
 
-test_loader = torchvision.datasets.Dataloader(test_dataset , batch_size=batch_size , shuffle=False)
+test_loader = torch.utils.data.DataLoader(test_dataset , batch_size=batch_size , shuffle=False)
 
 classes = ('plane' , 'car' , 'brid' , 'cat', 'deer','dog','frog','horse','ship','truck')
 
 # implement conv net
 class ConvNet(nn.Module):
     def __init__(self):
-        pass
+        super(ConvNet, self).__init__()
+        self.conv1 =nn.Conv2d(3, 6, 5)
+        self.pool =nn.MaxPool2d(2,2)
+        self.conv2 = nn.Conv2d(6, 16, 5)
+        self.fc1 = nn.Linear(16*5*5, 120) # torch.Size([4, 16, 5, 5]) <- 16*5*5
+        self.fc2 = nn.Linear(120,84)
+        self.fc3 = nn.Linear(84, 10)
 
     def forward(self,x):
-        pass
+        x = self.pool(F.relu(self.conv1(x)))
+        x = self.pool(F.relu(self.conv2(x)))
+        x = x.view(-1, 16*5*5)
+        x = F.relu(self.fc1(x))
+        x = F.relu(self.fc2(x))
+        x = self.fc3(x)
+        return x
 
 model = ConvNet().to(device)
 
@@ -47,7 +59,7 @@ optimizer = torch.optim.SGD(model.parameters() , lr =learning_rate)
 
 n_total_steps =len(train_loader)
 for epoch in range(num_epochs):
-    for i,(image,labels) in enumerate(train_loader):
+    for i,(images,labels) in enumerate(train_loader):
         # origin shape: [4,3,32,32] = 4,3,1024
         # input_layer: 3 input channels, 6 output channels, 5 kernel size
         images =images.to(device)
@@ -87,7 +99,7 @@ with torch.no_grad():
                 n_class_correct[label]+=1
             n_class_samples[label] +=1
 
-    acc = 100.0 * n_correct / n_class_samples
+    acc = 100.0 * n_correct / n_samples
     print(f'Accuracy of the network:{acc} %')
 
     for i in range(10):
