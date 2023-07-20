@@ -27,8 +27,9 @@
 [Conv NN](./13.%20Convolutional%20Neural%20Network%20(CNN)/Note.md)
 
 ## Reqirement
-
-    `pip install -r requirements.txt`
+```
+pip install -r requirements.txt
+```
 
 ## Reference
 
