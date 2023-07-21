@@ -7,11 +7,12 @@
   + Max Pooling
     small the image
 + Classification
-  + Flatten 
+  + Flatten
   + Fully connected
   + softmax
 
 ## Dataset
+
 `CIFAR-10`
 
 ## TestCNN
@@ -33,7 +34,7 @@
 
 + Code Example
 
-    ```
+    ```python
     conv1 =nn.Conv2d(3, 6 ,5)
     pool = nn.MaxPool2d(2,2)
     conv2 = nn.Conv2d(6, 16 ,5)
@@ -48,64 +49,72 @@
     x = pool(x)
     print(x.shape)
     ```
+
 + Function Intro:
-    1. `nn.Conv2d(in_channels, out_channels, kernel_size)`
 
-        `in_channels`: This parameter specifies the number of input channels. In the code snippet, the input to conv1 has 3 channels, indicating a color image with Red, Green, and Blue channels.
+  1. `nn.Conv2d(in_channels, out_channels, kernel_size)`
 
-        `out_channels`: This parameter specifies the number of output channels (also known as filters or feature maps). In the code snippet, conv1 will produce 6 output channels.
+      `in_channels`: This parameter specifies the number of input channels. In the code snippet, the input to conv1 has 3 channels, indicating a color image with Red, Green, and Blue channels.
 
-        `kernel_size`: This parameter specifies the size of the convolutional kernel (filter). In the code snippet, the kernel size for both conv1 and conv2 is set to 5x5.
+      `out_channels`: This parameter specifies the number of output channels (also known as filters or feature maps). In the code snippet, conv1 will produce 6 output channels.
 
-    So, in summary, the nn.Conv2d function defines a 2D convolutional layer that takes input with 3 channels, applies 6 filters of size 5x5, and produces 6 output channels (feature maps).
+      `kernel_size`: This parameter specifies the size of the convolutional kernel (filter). In the code snippet, the kernel size for both conv1 and conv2 is set to 5x5.
 
-    2. `nn.MaxPool2d(kernel_size, stride)`
+      So, in summary, the nn.Conv2d function defines a 2D convolutional layer that takes input with 3 channels, applies 6 filters of size 5x5, and produces 6 output channels (feature maps).
 
-        `kernel_size`: This parameter specifies the size of the max-pooling window. In the code snippet, a max-pooling window of size 2x2 is used.
+  2. `nn.MaxPool2d(kernel_size, stride)`
 
-        `stride`: This parameter specifies the stride of the max-pooling operation. In the code snippet, a stride of 2 is used, meaning the max-pooling window will move 2 pixels at a time.
-        The max-pooling operation reduces the spatial dimensions of the input feature maps, effectively downsampling the data and capturing the most important information. Max-pooling helps in reducing the computational complexity and the number of parameters in the network while retaining the most salient features.
-+ output: 
-    ```
+      `kernel_size`: This parameter specifies the size of the max-pooling window. In the code snippet, a max-pooling window of size 2x2 is used.
+
+      `stride`: This parameter specifies the stride of the max-pooling operation. In the code snippet, a stride of 2 is used, meaning the max-pooling window will move 2 pixels at a time.
+      The max-pooling operation reduces the spatial dimensions of the input feature maps, effectively downsampling the data and capturing the most important information. Max-pooling helps in reducing the computational complexity and the number of parameters in the network while retaining the most salient features.
+
++ output:
+
+    ```python
     torch.Size([4, 3, 32, 32])
     torch.Size([4, 6, 28, 28]) # (32-5+0)/1+1 =28
     torch.Size([4, 6, 14, 14]) # (28-2+0)/2 +1 =14
     torch.Size([4, 16, 10, 10])
     torch.Size([4, 16, 5, 5]) 
     ```
+
 + Size Conculation
     1. `conv layer`
-        ```
-        (W-F +2P)/S +1
-        ```
+
+        `(W-F +2P)/S +1`
+
         Example: 5x5 input, 3x3 filter, padding=0, stride=1
 
         (5-3+0)/1+1 =  -> 3x3
-    
+
     2. `pooling layer`
 
-        With kernel size 2 by 2 and a stride of 2 
-        ,will reduce image by a factor of 2
+        With kernel size 2 by 2 and a stride of 2 ,will reduce image by a factor of 2
 
 ## Problems
 
-+ [SSL](https://ithelp.ithome.com.tw/articles/10230087) error ( dataset download )
++ [SSL](https://ithelp.ithome.com.tw/articles/10230087) Error ( Dataset download )
 
   + Sol
-    ```
+
+    ```python
     import ssl
     ssl._create_default_https_context = ssl_create_unverified_context
     ```
+
 + package error (連結了多個 OpenMP 執行時函式庫 (libiomp5md.dll))
   + Sol
 
-    1. update package ( better )
-       ```
+    1. Update package ( better )
+
+       ```shell
        pip install --upgrade <package>
        ```
 
-    2. setting environment ( bad )
-       ```
+    2. Setting environment ( bad )
+
+       ```python
        import os
        os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
        ```
