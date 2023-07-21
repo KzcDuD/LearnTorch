@@ -16,3 +16,5 @@
 
 + Softmax
   + Use in last layer ,in multi class classification problems
+
+[Backpropagation with Softmax / Cross Entropy](https://medium.com/hoskiss-stand/backpropagation-with-softmax-cross-entropy-d60983b7b245)
