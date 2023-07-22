@@ -18,7 +18,7 @@ device =torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 input_size =784 # 28x28
 hidden_size = 100
 num_classes =10
-num_epochs =2
+num_epochs =4
 batch_size =100
 learning_rate =0.001
 
@@ -81,7 +81,7 @@ for epoch in range(num_epochs):
         loss.backward()
         optimizer.step()
         
-        if(i+1) %100 ==0:
+        if(i+1) %600 ==0:
             print(f'epoch {epoch+1} / {num_epochs}, step {i+1}/{n_total_steps}, loss = {loss.item():.4f}')
 
 # test
