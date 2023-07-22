@@ -1,4 +1,4 @@
-# import torch
+import torch
 
-# print(dir(torch))
-# help(torch)
+print(dir(torch))
+help(torch)
