@@ -83,6 +83,7 @@ for epoch in range(num_epochs):
         
         if(i+1) %600 ==0:
             print(f'epoch {epoch+1} / {num_epochs}, step {i+1}/{n_total_steps}, loss = {loss.item():.4f}')
+print("Finish Training.")
 
 # test
 with torch.no_grad():
