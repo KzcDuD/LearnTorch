@@ -22,7 +22,7 @@ y=x+2
 
 weights= torch.ones(4,requires_grad=True)
 for epoch in range(3):
-    model_output = (weights*3).sum()
+    model_output = (weights*3).sum() #sum of tensor
     model_output.backward()
     print(weights.grad)
     weights.grad.zero_()
