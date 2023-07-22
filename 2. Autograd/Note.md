@@ -1,5 +1,10 @@
 # Autograd
 
+## Keyword
+
++ `.sum()`: sum of tensor
++ `.item()`: transform tensor to scalar
+
 ## Explain
 
 + 『權重』(Weight)
