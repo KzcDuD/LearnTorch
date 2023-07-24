@@ -2,9 +2,23 @@
 
 ## Dataset
 
+### Itro
+
 + Arranging Data and giving number
++ 獲取每個數據及其Label
++ Sum of Data
+
+### arcitecture
+
++ Data
++ give Label ,like
+  + **floder name**
+  + **file name**
+  + **use other .txt file**
 
 ## Dataloader
+
++ `package`: 為Network 提供不同數據形式
 
 `dataloader =DataLoader(dataset=dataset , batch_size =4,shuffle =True,num_workers=0)`
 
