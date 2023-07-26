@@ -1,4 +1,4 @@
-# Gradient Descent
+# Gradient Descent 梯度下降
 
 ## Explain
 
@@ -11,16 +11,22 @@
 
 [numpy example](./numpy_predict.py)
 
-+ `X = np.array([1,2,3,4], dtype=np.float32)`
-+ `Y = np.array([2,4,6,8], dtype =np.float32)`
-
 + 從X , Y 逼近w 求出 `forward(x)` 預測值
+
+```python
+X = np.array([1,2,3,4], dtype=np.float32)`
+Y = np.array([2,4,6,8], dtype =np.float32)`
+```
 
 [pytorch example](./pytorch_predict.py)
 
-+ `l.backward() = gradient(X,Y,y_pred)`
-+ `dw = w.grad`
+```python
+backward() = gradient(X,Y,y_pred)
+dw = w.grad
+```
 
 ## Referance
 
 [ithome Gradient Descent](https://ithelp.ithome.com.tw/articles/10198147)
+
+[梯度最佳解](https://chih-sheng-huang821.medium.com/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-%E5%9F%BA%E7%A4%8E%E6%95%B8%E5%AD%B8-%E4%B8%89-%E6%A2%AF%E5%BA%A6%E6%9C%80%E4%BD%B3%E8%A7%A3%E7%9B%B8%E9%97%9C%E7%AE%97%E6%B3%95-gradient-descent-optimization-algorithms-b61ed1478bd7)
