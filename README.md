@@ -26,6 +26,10 @@
 
 1. [Convolution Neural Network](./13.%20Convolutional%20Neural%20Network%20(CNN)/Note.md)
 
+1. [Reansfer learning](./14.%20Transfer%20Learning/Note.md)
+
+1. [Save and load model](./15.%20Saving%20and%20Loading%20Models/Note.md)
+
 ## Reqirement
 
 ```shell
