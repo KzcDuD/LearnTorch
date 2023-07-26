@@ -17,7 +17,6 @@ class NeuralNet1(nn.Module):
         y_pred =torch.sigmoid(out)
         return y_pred
 
-
 # option 2 (use activation functions directly in forward pass)
 class NeuralNet(nn.Module):
     def __init__(self , input_size ,hidden_size):
