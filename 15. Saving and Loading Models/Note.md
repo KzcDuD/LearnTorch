@@ -1,4 +1,4 @@
-# Save amd load model
+# Save and load model
 
 ## Save
 
@@ -12,7 +12,11 @@ torch.save(model,PATH)
 # model class must be defined somewhere
 model =torch.load(PATH)
 model.eval()
+```
 
+```python
+import torch
+import torch.nn as nn
 
 #### STATE DICT ####
 torch.save(model.state_dict(), PATH)
